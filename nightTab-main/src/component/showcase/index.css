@@ -1,0 +1,52 @@
+:root {
+  --showcase-padding: 4em;
+}
+
+.showcase {
+  padding: var(--showcase-padding);
+  width: 100vw;
+  min-height: 100vh;
+  z-index: var(--z-index-showcase);
+}
+
+.showcase {
+  display: grid;
+  gap: var(--showcase-padding);
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas:
+    "side content";
+  justify-items: center;
+}
+
+.showcase-side {
+  grid-area: side;
+  position: sticky;
+  top: var(--showcase-padding);
+  width: 100%;
+  height: fit-content;
+}
+
+.showcase-content {
+  grid-area: content;
+}
+
+@media (min-width: 1400px) {
+  .showcase-content {
+    grid-area: content;
+    max-width: 80%;
+  }
+}
+
+.showcase-type h1,
+.showcase-type h2,
+.showcase-type h3,
+.showcase-type h4,
+.showcase-type h5,
+.showcase-type h6 {
+  margin-bottom: 0.5em;
+  white-space: nowrap;
+}
+
+.showcase-type {
+  flex-basis: 100%;
+}
